@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+
+<% if @question.errors.any? %>
+	<ul>
+		<% @question.errors.full_messages.each do |msg| %>
+			<li>
+			<%= msg %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+
+<form action='/questions' method='POST'>
+  <input type='Text' name='title' size='' placeholder='' >
+  <input type='Text' name='description' size='' placeholder='' >
+  <button type='submit' name="Post">Post</button>
+</form>
