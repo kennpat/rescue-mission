@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
 
-
-gem 'rspec-rails'
-gem 'capybara'
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
