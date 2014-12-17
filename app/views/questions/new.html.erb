@@ -2,18 +2,19 @@
 
 
 <% if @question.errors.any? %>
-	<ul>
-		<% @question.errors.full_messages.each do |msg| %>
-			<li>
-			<%= msg %>
-			</li>
-		<% end %>
-	</ul>
+  <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
 <% end %>
 
+<%= form_for @question do |f| %>
 
-<form action='/questions' method='POST'>
-  <input type='Text' name='title' size='' placeholder='' >
-  <input type='Text' name='description' size='' placeholder='' >
-  <button type='submit' name="Post">Post</button>
-</form>
+	<div><%= label_tag(:q, "Question Title:") %>
+	<%= f.text_field(:title) %></div>
+	<div><%= label_tag(:q, "Question Detail: ") %>
+	<%= f.text_area(:description, size: "60x12") %></div>
+
+	<div><%= f.submit "Post" %></div>
+<% end %>

@@ -14,10 +14,9 @@ feature "User posts a question" do
 
 	it "posts a question" do
 		visit '/questions/new'
-		fill_in "title", with: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-		Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis 
-		dis parturient montes, nascetur ridiculus mus"
-		fill_in "description", with: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+		fill_in "question_title", with: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+		Aenean commodo ligula eget dolor. Aenean massa."
+		fill_in "question_description", with: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
 		Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis par"
 		click_on "Post"
 	end
