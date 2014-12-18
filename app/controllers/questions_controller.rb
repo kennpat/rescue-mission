@@ -20,7 +20,10 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
+		# binding.pry
+		@answer = Answer.new
 		@question = Question.find_by(id:params[:id])
+		# @answers = Answer.order(created_at: :desc).where(:question_id == params[:id])
 	end
 
 private 
